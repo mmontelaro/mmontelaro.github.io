@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Lob Ster Fishing</h1>
+<p>Official Lob Ster Fishing support site :)</p>
+</body>
+</html>
