@@ -6,7 +6,7 @@ function App() {
   return (
     <HashRouter>
       <Routes>
-          <Route path={'/'} element={<p>yo</p>}/>
+          <Route path={'/'} element={<p>This is the lob ster fishing support site but it is under construction. We do not collect any user data. </p>}/>
           <Route path={'/sup'} element={<p>supa</p>}/>
       </Routes>
     </HashRouter>
