@@ -16,10 +16,25 @@ export default function Homepage() {
     //     return res;
     // }
 
-    const bgStyle = {height: "100vh"}
+    const bgStyle = {height: "100vh", display: "flex", flexDirection: "column"}
+
+    const bottomBar = {display: "flex", justifyContent: "space-around", marginTop: "auto"}
+
+    const iconStyle = {height: "5vh"}
 
     return (<div style={bgStyle}>
         <NavBar />
         Site Under Construction
+        <div style={bottomBar}>
+            <a href={"http://www.linkedin.com/in/matthew-montelaro-742a43296"}>
+                <img style={iconStyle} src={"linkedin.png"} alt={"LinkedIn"}/>
+            </a>
+            <a href={"https://github.com/mmontelaro"}>
+                <img style={iconStyle} src={"github.png"} alt={"Github"}/>
+            </a>
+            <a href={"http://www.youtube.com/@puggietaur"}>
+                <img style={iconStyle} src={"youtube.png"} alt={"Youtube"}/>
+            </a>
+        </div>
     </div>)
 }
