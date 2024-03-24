@@ -1,0 +1,52 @@
+.home__img {
+    background: url(../../../public/me.jfif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 110% 110%;
+    box-shadow: inset 0 0 0 9px rgb(255 255 255 / 30%);
+    order: 1;
+    justify-self: center;
+    width: 20vw;
+    height: 20vw;
+    margin: 1vw 1vw 1vw 1vw;
+    animation: profile__animate 8s ease-in-out infinite;
+    transition:
+        background-size 0.25s linear,
+        margin 0.25s linear,
+        height 0.25s linear,
+        width 0.25s linear
+}
+
+.home__img:hover {
+    background-size: 100% 100%;
+    height: 22vw;
+    width: 22vw;
+    margin: 0 0 0 0;
+}
+
+@keyframes profile__animate {
+    0% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+
+    50% {
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+
+    100% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+}
+
+.icon {
+    height: 5vh;
+    margin: 1vh 1vh 1vh 1vh;
+    transition:
+        margin 0.25s,
+        height 0.25s
+}
+
+.icon:hover {
+    height: 7vh;
+    margin: 0 0 0 0;
+}
