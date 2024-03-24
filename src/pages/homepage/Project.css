@@ -4,6 +4,7 @@
     padding: 1vmin 1vmin 1vmin 1vmin;
     border-radius: 5px;
     border-style: outset;
+    border-color: rgb(230,230,230);
     transition:
         padding 0.25s ease-in-out,
         margin 0.25s ease-in-out,

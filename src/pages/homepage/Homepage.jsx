@@ -1,10 +1,35 @@
 import NavBar from "../../NavBar";
 import ProjectList from "./ProjectList";
 import "./Homepage.css"
+import "./useMousePosition"
+import useMousePosition from "./useMousePosition";
+import useWindowDimensions from "./useWindowDimensions";
+import {useState} from "react";
 
 export default function Homepage() {
 
-    const bgStyle = {display: "flex", flexDirection: "column", overflowY: "auto", height: "auto", marginTop: "10vh"}
+    const mousePosition = useMousePosition();
+    const [color, setColor] = useState({r: 200, g: 200, b: 255});
+
+    const colorVariety = 3
+    const updateChance = 0.7
+
+    const {height, width} = useWindowDimensions();
+
+    function computeBackground () {
+        if (Math.random() <= updateChance) {
+            setColor({r: Math.max(200, color.r + colorVariety*(Math.random() - 0.5)),
+                g: Math.max(200, color.g + colorVariety*(Math.random() - 0.5)),
+                b: Math.max(200, color.b + colorVariety*(Math.random() - 0.5))})
+        }
+        let colors = color.r + ", " + color.g + ", " + color.b
+        return "linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(" + colors + ", 0.5) " + (100*(mousePosition.x-2)/width) + "%, rgba(" + colors + ", 0.5) "+ (100*(mousePosition.x)/width) + "%, rgba(" + colors +", 0.5) " + (100*(mousePosition.x+2)/width) + "%, rgb(255, 255, 255) 100%), " +
+            "linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(" + colors + ", 0.5) " + (100*(mousePosition.y-2)/height) + "%, rgba(" + colors + ", 0.5) "+ (100*(mousePosition.y)/height) + "%, rgba(" + colors +", 0.5) " + (100*(mousePosition.y+2)/height) + "%, rgb(255, 255, 255) 100%)"
+    }
+
+    const pageStyle = {display: "flex", flexDirection: "column", height: "100vh", width: "100vw", position: "relative", background: computeBackground()}
+
+    const bgStyle = {display: "flex", flexDirection: "column", overflowY: "auto", height: "100vh", padding: "12vh 0 12vh 0"}
 
     const profileStyle = {display: "flex", justifyContent: "space-around"}
 
@@ -18,11 +43,12 @@ export default function Homepage() {
 
     const titleStyle = {fontFamily: "Georgia", fontSize: "5.5vmin", textAlign: "center"}
 
-    const bottomBar = {display: "flex", justifyContent: "space-around", marginTop: "auto"}
+    const bottomBar = {display: "flex", justifyContent: "space-around", marginTop: "auto", background: "linear-gradient(to top, rgba(200, 200, 200, 1) 90%, rgba(200, 200, 200, 0) 100%)", position: "absolute", bottom: "0", width: "100vw"}
 
-    const projects = [{name: "Personal Website", years: [2024,2024], description: "The website you are looking at right now", link: "/", tools: ["React", "Javascript", "CSS"]}, {link: "https://google.com"}, {}, {}]
+    const projects = [{name: "Personal Website", years: [2024,2024], description: "The website you are looking at right now", link: "/", tools: ["React", "Javascript", "CSS"]},
+        {name: "Nicebreakers", years: [2024,2024], description: "A website for uploading  and finding icebreaker activities and questions", link: "https://main.d3pb2yef2pgy2m.amplifyapp.com/", tools: ["React", "Javascript", "CSS", "AWS Amplify"]}, {}]
 
-    return (<div style={{display: "flex", flexDirection: "column", height: "100vh"}}>
+    return (<div style={pageStyle}>
         <NavBar/>
         <div style={bgStyle} className={"bg"}>
             Site Under Construction
