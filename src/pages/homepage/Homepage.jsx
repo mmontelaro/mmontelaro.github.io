@@ -1,9 +1,10 @@
 import NavBar from "../../NavBar";
+import ProjectList from "./ProjectList";
 import "./Homepage.css"
 
 export default function Homepage() {
 
-    const bgStyle = {display: "flex", flexDirection: "column", overflowY: "hidden", height: "auto"}
+    const bgStyle = {display: "flex", flexDirection: "column", overflowY: "auto", height: "auto", marginTop: "10vh"}
 
     const profileStyle = {display: "flex", justifyContent: "space-around"}
 
@@ -15,11 +16,15 @@ export default function Homepage() {
 
     const pStyle = {fontFamily: "Georgia", fontSize: "3vmin", maxWidth: "30vw", marginTop: "0"}
 
+    const titleStyle = {fontFamily: "Georgia", fontSize: "5.5vmin", textAlign: "center"}
+
     const bottomBar = {display: "flex", justifyContent: "space-around", marginTop: "auto"}
 
+    const projects = [{name: "Personal Website", years: [2024,2024], description: "The website you are looking at right now", link: "/", tools: ["React", "Javascript", "CSS"]}, {link: "https://google.com"}, {}, {}]
+
     return (<div style={{display: "flex", flexDirection: "column", height: "100vh"}}>
-        <NavBar />
-        <div style={bgStyle}>
+        <NavBar/>
+        <div style={bgStyle} className={"bg"}>
             Site Under Construction
             <div style={profileStyle}>
                 <div style={aboutStyle}>
@@ -29,15 +34,13 @@ export default function Homepage() {
                         </div>
                         <div style={{borderBottom: "1px solid black", width: "4vw"}} />
                     </div>
-                    <p style={pStyle}> Hello! I'm Matthew Montelaro, a soon to graduate Computer Science major at UW Seattle!  </p>
+                    <p style={pStyle}> Hello! I'm Matthew Montelaro, a soon to graduate Computer Science major at UW Seattle.  </p>
                 </div>
                 <div className={"home__img"}/>
             </div>
-            <div>
-
-            </div>
+            <p style={titleStyle}> Projects </p>
+            <ProjectList projects={projects}/>
         </div>
-
         <div style={bottomBar}>
             <a href={"http://www.linkedin.com/in/matthew-montelaro-742a43296"}>
                 <img className={"icon"} src={"linkedin.png"} alt={"LinkedIn"}/>

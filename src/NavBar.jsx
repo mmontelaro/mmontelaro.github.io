@@ -4,7 +4,7 @@ export default function NavBar() {
 
     const navigate = useNavigate();
 
-    const barStyle = {height: "12vh", background: "linear-gradient(to top, rgba(0, 0, 0, 0), rgba(1, 0.3, 0.3, 1) 30%)"}
+    const barStyle = {height: "12vh", background: "linear-gradient(to top, rgba(0, 0, 0, 0), rgba(1, 0.3, 0.3, 1) 30%)", position: "absolute", top: "0", width: "100vw"}
 
     const buttonHolder = {height: "80%", display: "flex", alignContent: "center", justifyContent: "space-around"}
 
