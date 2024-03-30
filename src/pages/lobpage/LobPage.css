@@ -1,0 +1,16 @@
+.lobApp {
+    margin: 2vmin 2vmin 2vmin 2vmin;
+    width: 10vmin;
+    height: 10vmin;
+    border-radius: 1vmin;
+    transition:
+        width 0.25s,
+        height 0.25s,
+        margin 0.25s
+}
+
+.lobApp:hover {
+    margin: 1vmin 1vmin 1vmin 1vmin;
+    width: 12vmin;
+    height: 12vmin;
+}

@@ -11,7 +11,7 @@ export default function Homepage() {
     const mousePosition = useMousePosition();
     const [color, setColor] = useState({r: 200, g: 200, b: 255});
 
-    const colorVariety = 3
+    const colorVariety = 2
     const updateChance = 0.7
 
     const {height, width} = useWindowDimensions();
@@ -46,7 +46,7 @@ export default function Homepage() {
     const bottomBar = {display: "flex", justifyContent: "space-around", marginTop: "auto", background: "linear-gradient(to top, rgba(200, 200, 200, 1) 90%, rgba(200, 200, 200, 0) 100%)", position: "absolute", bottom: "0", width: "100vw"}
 
     const projects = [{name: "Personal Website", years: [2024,2024], description: "The website you are looking at right now", link: "/", tools: ["React", "Javascript", "CSS"]},
-        {name: "Nicebreakers", years: [2024,2024], description: "A website for uploading  and finding icebreaker activities and questions", link: "https://main.d3pb2yef2pgy2m.amplifyapp.com/", tools: ["React", "Javascript", "CSS", "AWS Amplify"]}, {}]
+        {name: "Nicebreakers", years: [2024,2024], description: "A website for uploading  and finding icebreaker activities and questions", link: "https://main.d3pb2yef2pgy2m.amplifyapp.com/", tools: ["React", "Javascript", "CSS", "AWS Amplify"]}]
 
     return (<div style={pageStyle}>
         <NavBar/>
@@ -68,7 +68,7 @@ export default function Homepage() {
             <ProjectList projects={projects}/>
         </div>
         <div style={bottomBar}>
-            <a href={"http://www.linkedin.com/in/matthew-montelaro-742a43296"}>
+            <a href={"https://www.linkedin.com/in/matthew-montelaro/"}>
                 <img className={"icon"} src={"linkedin.png"} alt={"LinkedIn"}/>
             </a>
             <a href={"https://github.com/mmontelaro"}>
